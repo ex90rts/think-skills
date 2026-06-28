@@ -1,0 +1,4 @@
+interface:
+  display_name: "Think Router"
+  short_description: "Choose the right thinking-training skill"
+  default_prompt: "Use $think-router to help me choose the right thinking skill for my problem."

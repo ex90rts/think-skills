@@ -1,0 +1,4 @@
+interface:
+  display_name: "Beautiful Question"
+  short_description: "Guide complex problems through better questions"
+  default_prompt: "Use $beautiful-question to help me clarify and solve a complex problem."
