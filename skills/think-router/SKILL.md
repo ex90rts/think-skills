@@ -1,13 +1,13 @@
 ---
 name: think-router
-description: Route a user's problem to the most suitable thinking-training skill in this repository when the user is unsure which thinking tool to use. Use when the user asks which thinking skill, method, or thinking tool fits their situation, or when they describe a problem and explicitly want help choosing among this repo's skills.
+description: Route a user's problem to the most suitable skill in this repository when the user is unsure which tool to use. Use when the user asks which skill, method, or workflow fits their situation, or when they describe a problem and explicitly want help choosing among this repo's skills.
 ---
 
 # Think Router
 
 ## Overview
 
-Use this skill as a thinking-method router. Help the user choose the best skill from the other skills in this repository, then tell them how to invoke it.
+Use this skill as a repository skill router. Help the user choose the best skill from the other skills in this repository, then tell them how to invoke it.
 
 Read `references/skill-catalog.md` before making a routing recommendation. Keep the user's first language as the response language unless the user asks to switch.
 
@@ -29,6 +29,7 @@ Prefer asking about the user's immediate intent:
 - Generate possibilities?
 - Make a decision?
 - Diagnose a failure?
+- Review, refactor, or design code?
 - Build an implementation plan?
 - Reflect on a learning or life question?
 

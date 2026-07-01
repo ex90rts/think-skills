@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critical Thinking"
+  short_description: "Use critical thinking to examine claims"
+  default_prompt: "Use $critical-thinking to examine this view or phenomenon with critical thinking."

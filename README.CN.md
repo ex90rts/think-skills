@@ -1,33 +1,38 @@
-# think-skills
+# hong-skills
 
 [English](README.md)
 
-`think-skills` 是一个面向 AI Agent 的思维训练 Skills 仓库。它的目标不是只讲解思维模型，而是让 AI Agent 通过持续追问、引导、拆解和落地规划，帮助使用者在真实问题中反复练习这些思维方式，逐步把它们内化成自己的思考习惯。
+`hong-skills` 是一个用于沉淀和分析个人在工作、生活中总结出的 AI Agent Skills 的仓库。`hong` 的灵感来自“宏命令”：它代表一种强大而易用的快捷范式，也保留了“宏大”的含义，指向可持续扩展的能力集合。
 
-日常学习中，我们会接触到系统性思维、扩展思维、辩证思维、第一性原理、提问式思考等方法。但这些方法只有在长期使用中才会真正变成能力。本仓库中的每个 skill 都对应一种思维训练方法，可以单独安装，也可以全部安装。
+README 只作为仓库索引使用。每个 skill 的详细说明放在 [`docs/`](docs/) 目录。
 
-## Skills
+## 当前 Skills
 
-| Skill | 适用场景 | 方法简介 |
-| --- | --- | --- |
-| `think-router` | 不确定应该使用哪个思维工具时 | 根据用户的问题目标、思考阶段和不确定性类型，在本仓库已有 skills 中选择最合适的一个。 |
-| `beautiful-question` | 问题复杂、模糊、表层化，需要先找到真正要解决的问题时 | 使用 Warren Berger 的 Why / What If / How 提问路径，结合 5 Whys，先追问根问题，再发散假设，最后形成落地方案。 |
+| Skill                | 类型            | 适用场景                                                               | 详细说明                                                   |
+| -------------------- | --------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `think-router`       | Skill 路由      | 不确定当前问题应该使用仓库里的哪个 skill。                             | [`docs/think-router.md`](docs/think-router.md)             |
+| `critical-thinking`  | 思维 / 论证评估 | 需要分析一个看法、断言、论证、决策或现象，检查理由、证据、假设、偏见和替代解释。 | [`docs/critical-thinking.md`](docs/critical-thinking.md)   |
+| `beautiful-question` | 思维 / 问题澄清 | 问题复杂、模糊、停留在表层症状，需要先找到真正要解决的问题。           | [`docs/beautiful-question.md`](docs/beautiful-question.md) |
+| `first-principle`    | 思维 / 创新     | 需要剥离继承来的假设，找到系统的基石前提，并用第一性原理重新推导。     | [`docs/first-principle.md`](docs/first-principle.md)       |
+| `deepthink-5so`      | 思维 / 结果推演 | 需要连续追问“所以呢”，推演某个现象最终可能导致什么结果。               | [`docs/deepthink-5so.md`](docs/deepthink-5so.md)           |
+| `system-thinking`    | 思维 / 系统分析 | 需要梳理复杂系统中的变量、因果链、反馈回路、滞后效应和利益相关者。     | [`docs/system-thinking.md`](docs/system-thinking.md)       |
+| `coding-art`         | 软件工程        | 写代码、代码评审、重构、模块设计、调试或优化时，需要有原则的工程判断。 | [`docs/coding-art.md`](docs/coding-art.md)                 |
 
 ## 安装
 
-安装全部 skills 到通用 Agent 目录：
+安装全部 skills 到默认 Agent skills 目录：
 
 ```bash
 scripts/install.sh
 ```
 
-安装到 Codex：
+安装全部 skills 到 Codex：
 
 ```bash
 scripts/install.sh --target codex
 ```
 
-安装到 Claude Code：
+安装全部 skills 到 Claude Code：
 
 ```bash
 scripts/install.sh --target claude
@@ -36,10 +41,16 @@ scripts/install.sh --target claude
 只安装某一个 skill：
 
 ```bash
-scripts/install.sh --target codex --skill beautiful-question
+scripts/install.sh --target codex --skill coding-art
 ```
 
-安装到自定义目录：
+安装多个指定 skills：
+
+```bash
+scripts/install.sh --target codex --skill beautiful-question --skill coding-art
+```
+
+安装到自定义 skills 目录：
 
 ```bash
 scripts/install.sh --dest /path/to/skills --all
@@ -59,35 +70,73 @@ scripts/install.sh --target codex --dry-run
 
 默认目标目录：
 
-| Target | 目录 |
-| --- | --- |
+| Target   | 目录               |
+| -------- | ------------------ |
 | `agents` | `~/.agents/skills` |
-| `codex` | `~/.codex/skills` |
+| `codex`  | `~/.codex/skills`  |
 | `claude` | `~/.claude/skills` |
 
 ## 使用
 
-如果不确定该用哪个思维工具，先使用路由 skill：
+安装后，用 skill frontmatter 中的名称调用：
 
 ```text
-Use $think-router to help me choose the right thinking skill for my problem: ...
+Use $coding-art to review this module's design and point out code-quality risks.
 ```
 
-如果已经知道要使用“美丽问题”训练，可以直接调用：
+```text
+Use $critical-thinking to examine this view or phenomenon: ...
+```
 
 ```text
 Use $beautiful-question to help me clarify and solve this problem: ...
 ```
 
-中文对话也可以直接说：
+```text
+Use $first-principle to rebuild this strategy from first principles: ...
+```
 
 ```text
-使用 $think-router 帮我判断这个问题适合用哪个思维训练 skill：...
+Use $deepthink-5so to explore what this phenomenon could ultimately lead to: ...
 ```
+
+```text
+Use $system-thinking to analyze this problem as a system: ...
+```
+
+如果不确定该用哪个仓库 skill，先使用路由：
+
+```text
+Use $think-router to help me choose the right skill for my problem: ...
+```
+
+也可以直接用中文表达：
+
+```text
+使用 $think-router 帮我判断这个问题适合用哪个 skill：...
+```
+
+## 仓库结构
+
+```text
+skills/
+  <skill-name>/
+    SKILL.md
+    references/
+    agents/
+
+docs/
+  <skill-name>.md
+
+scripts/
+  install.sh
+```
+
+`skills/` 存放可安装的 skill 包。`docs/` 存放每个 skill 的面向人的详细说明。`scripts/install.sh` 负责把选中的 skills 复制到目标 Agent skills 目录。
 
 ## 添加新的 Skill
 
-新增 skill 时建议遵循以下结构：
+建议结构：
 
 ```text
 skills/
@@ -98,10 +147,11 @@ skills/
       openai.yaml
 ```
 
-新增后请同步更新：
+新增或修改 skill 时，请同步更新：
 
-- `skills/think-router/references/skill-catalog.md`
 - `README.md`
-- `README.zh-CN.md`
+- `README.CN.md`
+- `docs/<skill-name>.md`
+- `skills/think-router/references/skill-catalog.md`，如果希望它能被 `think-router` 推荐
 
-这样 `think-router` 才能把新 skill 纳入推荐范围。
+README 中只保留简短索引。使用细节、适用边界和资源说明放到 `docs/`。

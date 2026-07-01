@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deepthink 5So"
+  short_description: "Trace consequence chains with 5So"
+  default_prompt: "Use $deepthink-5so to explore what this phenomenon could ultimately lead to."

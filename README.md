@@ -2,32 +2,37 @@
 
 [中文](README.CN.md)
 
-`think-skills` is a collection of thinking-training skills for AI agents. The goal is not just to explain thinking models, but to let an AI agent guide users through repeated practice with real problems: asking sharper questions, widening options, testing assumptions, and turning thinking into action.
+`hong-skills` is a personal collection of AI agent skills distilled from everyday work and life. The name `hong` is inspired by macro commands: a powerful yet easy-to-use shortcut pattern for reusable capability, while also carrying a sense of breadth and ambition.
 
-We often learn frameworks such as systems thinking, expansive thinking, dialectical thinking, first-principles thinking, and question-driven thinking. These ideas only become real capability through long-term use. Each skill in this repository represents one thinking method. You can install one skill at a time or install the full set.
+The README is the repository index. Detailed notes for each skill live in [`docs/`](docs/).
 
-## Skills
+## Current Skills
 
-| Skill                | Best For                                                                                 | Method                                                                                                                                                    |
-| -------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `think-router`       | When you are unsure which thinking tool fits your problem                                | Routes your problem to one of the other skills in this repository based on goal, thinking stage, and type of uncertainty.                                 |
-| `beautiful-question` | Complex, vague, or surface-level problems where you need to find the real question first | Uses Warren Berger's Why / What If / How arc, strengthened with 5 Whys, to uncover a root question, generate options, and produce an implementation plan. |
+| Skill | Category | Use When | Details |
+| --- | --- | --- | --- |
+| `think-router` | Skill router | You are unsure which skill in this repository fits the current problem. | [`docs/think-router.md`](docs/think-router.md) |
+| `critical-thinking` | Thinking / argument evaluation | You need to examine a view, claim, argument, decision, or phenomenon by checking reasons, evidence, assumptions, bias, and alternatives. | [`docs/critical-thinking.md`](docs/critical-thinking.md) |
+| `beautiful-question` | Thinking / problem solving | A problem is vague, shallow, or stuck at the symptom level, and you need to find the real question before solving it. | [`docs/beautiful-question.md`](docs/beautiful-question.md) |
+| `first-principle` | Thinking / innovation | You need to strip away inherited assumptions, find the system's base premise, and rebuild from first principles. | [`docs/first-principle.md`](docs/first-principle.md) |
+| `deepthink-5so` | Thinking / consequence inference | You need to repeatedly ask "so what?" to infer what a phenomenon may eventually lead to. | [`docs/deepthink-5so.md`](docs/deepthink-5so.md) |
+| `system-thinking` | Thinking / systems analysis | You need to map variables, causal chains, feedback loops, delays, and stakeholders in a complex system. | [`docs/system-thinking.md`](docs/system-thinking.md) |
+| `coding-art` | Software engineering | You are writing, reviewing, refactoring, designing, debugging, or optimizing code and want principled engineering judgment. | [`docs/coding-art.md`](docs/coding-art.md) |
 
 ## Installation
 
-Install all skills into the generic Agent skills directory:
+Install all skills into the default Agent skills directory:
 
 ```bash
 scripts/install.sh
 ```
 
-Install into Codex:
+Install all skills into Codex:
 
 ```bash
 scripts/install.sh --target codex
 ```
 
-Install into Claude Code:
+Install all skills into Claude Code:
 
 ```bash
 scripts/install.sh --target claude
@@ -36,22 +41,28 @@ scripts/install.sh --target claude
 Install one skill only:
 
 ```bash
-scripts/install.sh --target codex --skill beautiful-question
+scripts/install.sh --target codex --skill coding-art
 ```
 
-Install into a custom directory:
+Install several selected skills:
+
+```bash
+scripts/install.sh --target codex --skill beautiful-question --skill coding-art
+```
+
+Install into a custom skills directory:
 
 ```bash
 scripts/install.sh --dest /path/to/skills --all
 ```
 
-If a skill already exists in the destination, the installer skips it by default. Add `--force` to replace existing skill directories:
+If a destination skill already exists, the installer skips it by default. Add `--force` to replace existing directories:
 
 ```bash
 scripts/install.sh --target codex --force
 ```
 
-Preview actions without copying files:
+Preview install actions without copying files:
 
 ```bash
 scripts/install.sh --target codex --dry-run
@@ -59,33 +70,71 @@ scripts/install.sh --target codex --dry-run
 
 Default destinations:
 
-| Target   | Directory          |
-| -------- | ------------------ |
+| Target | Directory |
+| --- | --- |
 | `agents` | `~/.agents/skills` |
-| `codex`  | `~/.codex/skills`  |
+| `codex` | `~/.codex/skills` |
 | `claude` | `~/.claude/skills` |
 
 ## Usage
 
-If you are not sure which thinking tool to use, start with the router:
+After installation, invoke a skill by its frontmatter name:
 
 ```text
-Use $think-router to help me choose the right thinking skill for my problem: ...
+Use $coding-art to review this module's design and point out code-quality risks.
 ```
 
-If you already know you want the Beautiful Question flow:
+```text
+Use $critical-thinking to examine this view or phenomenon: ...
+```
 
 ```text
 Use $beautiful-question to help me clarify and solve this problem: ...
 ```
 
-Chinese usage is also fine:
-
 ```text
-使用 $think-router 帮我判断这个问题适合用哪个思维训练 skill：...
+Use $first-principle to rebuild this strategy from first principles: ...
 ```
 
-## Adding a New Skill
+```text
+Use $deepthink-5so to explore what this phenomenon could ultimately lead to: ...
+```
+
+```text
+Use $system-thinking to analyze this problem as a system: ...
+```
+
+If you are not sure which repository skill to use, start with:
+
+```text
+Use $think-router to help me choose the right skill for my problem: ...
+```
+
+Chinese prompts work as well:
+
+```text
+使用 $think-router 帮我判断这个问题适合用哪个 skill：...
+```
+
+## Repository Layout
+
+```text
+skills/
+  <skill-name>/
+    SKILL.md
+    references/
+    agents/
+
+docs/
+  <skill-name>.md
+
+scripts/
+  install.sh
+```
+
+`skills/` contains installable skill packages. `docs/` contains human-facing documentation for each skill. `scripts/install.sh` copies selected skills into the target agent skills directory.
+
+## Adding A Skill
 
 Recommended structure:
 
@@ -98,10 +147,11 @@ skills/
       openai.yaml
 ```
 
-After adding a skill, update:
+When adding or changing a skill, update:
 
-- `skills/think-router/references/skill-catalog.md`
 - `README.md`
-- `README.zh-CN.md`
+- `README.CN.md`
+- `docs/<skill-name>.md`
+- `skills/think-router/references/skill-catalog.md`, if the skill should be discoverable through `think-router`
 
-This keeps `think-router` aligned with the actual skills available in the repository.
+Keep README entries short. Put usage details, scope, and resources in `docs/`.

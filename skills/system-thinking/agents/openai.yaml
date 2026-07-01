@@ -1,0 +1,4 @@
+interface:
+  display_name: "System Thinking"
+  short_description: "Map systems with five elements"
+  default_prompt: "Use $system-thinking to analyze this problem as a system."

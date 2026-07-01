@@ -1,0 +1,4 @@
+interface:
+  display_name: "First Principle"
+  short_description: "Train first-principles reasoning"
+  default_prompt: "Use $first-principle to rebuild my problem from first principles."
