@@ -8,15 +8,18 @@ README 只作为仓库索引使用。每个 skill 的详细说明放在 [`docs/`
 
 ## 当前 Skills
 
-| Skill                | 类型            | 适用场景                                                               | 详细说明                                                   |
-| -------------------- | --------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------- |
-| `think-router`       | Skill 路由      | 不确定当前问题应该使用仓库里的哪个 skill。                             | [`docs/think-router.md`](docs/think-router.md)             |
-| `critical-thinking`  | 思维 / 论证评估 | 需要分析一个看法、断言、论证、决策或现象，检查理由、证据、假设、偏见和替代解释。 | [`docs/critical-thinking.md`](docs/critical-thinking.md)   |
-| `beautiful-question` | 思维 / 问题澄清 | 问题复杂、模糊、停留在表层症状，需要先找到真正要解决的问题。           | [`docs/beautiful-question.md`](docs/beautiful-question.md) |
-| `first-principle`    | 思维 / 创新     | 需要剥离继承来的假设，找到系统的基石前提，并用第一性原理重新推导。     | [`docs/first-principle.md`](docs/first-principle.md)       |
-| `deepthink-5so`      | 思维 / 结果推演 | 需要连续追问“所以呢”，推演某个现象最终可能导致什么结果。               | [`docs/deepthink-5so.md`](docs/deepthink-5so.md)           |
-| `system-thinking`    | 思维 / 系统分析 | 需要梳理复杂系统中的变量、因果链、反馈回路、滞后效应和利益相关者。     | [`docs/system-thinking.md`](docs/system-thinking.md)       |
-| `coding-art`         | 软件工程        | 写代码、代码评审、重构、模块设计、调试或优化时，需要有原则的工程判断。 | [`docs/coding-art.md`](docs/coding-art.md)                 |
+### 思维训练 Skills
+
+- [`think-router`](docs/think-router.md): 不确定当前问题应该使用仓库里的哪个思维 skill。
+- [`critical-thinking`](docs/critical-thinking.md): 需要分析一个看法、断言、论证、决策或现象，检查理由、证据、假设、偏见和替代解释。
+- [`beautiful-question`](docs/beautiful-question.md): 问题复杂、模糊、停留在表层症状，需要先找到真正要解决的问题。
+- [`first-principle`](docs/first-principle.md): 需要剥离继承来的假设，找到系统的基石前提，并用第一性原理重新推导。
+- [`deepthink-5so`](docs/deepthink-5so.md): 需要连续追问“所以呢”，推演某个现象最终可能导致什么结果。
+- [`system-thinking`](docs/system-thinking.md): 需要将问题看作一个系统，分析变量、因果链、反馈循环、延迟和相关方。
+
+### 编程 Skills
+
+- [`coding-art`](docs/coding-art.md): 写代码、代码评审、重构、模块设计、调试或优化时，需要有原则的工程判断。
 
 ## 安装
 

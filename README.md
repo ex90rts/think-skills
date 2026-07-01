@@ -8,15 +8,20 @@ The README is the repository index. Detailed notes for each skill live in [`docs
 
 ## Current Skills
 
-| Skill | Category | Use When | Details |
-| --- | --- | --- | --- |
-| `think-router` | Skill router | You are unsure which skill in this repository fits the current problem. | [`docs/think-router.md`](docs/think-router.md) |
-| `critical-thinking` | Thinking / argument evaluation | You need to examine a view, claim, argument, decision, or phenomenon by checking reasons, evidence, assumptions, bias, and alternatives. | [`docs/critical-thinking.md`](docs/critical-thinking.md) |
-| `beautiful-question` | Thinking / problem solving | A problem is vague, shallow, or stuck at the symptom level, and you need to find the real question before solving it. | [`docs/beautiful-question.md`](docs/beautiful-question.md) |
-| `first-principle` | Thinking / innovation | You need to strip away inherited assumptions, find the system's base premise, and rebuild from first principles. | [`docs/first-principle.md`](docs/first-principle.md) |
-| `deepthink-5so` | Thinking / consequence inference | You need to repeatedly ask "so what?" to infer what a phenomenon may eventually lead to. | [`docs/deepthink-5so.md`](docs/deepthink-5so.md) |
-| `system-thinking` | Thinking / systems analysis | You need to map variables, causal chains, feedback loops, delays, and stakeholders in a complex system. | [`docs/system-thinking.md`](docs/system-thinking.md) |
-| `coding-art` | Software engineering | You are writing, reviewing, refactoring, designing, debugging, or optimizing code and want principled engineering judgment. | [`docs/coding-art.md`](docs/coding-art.md) |
+## Current Skills
+
+### Thinking Skills
+
+- [`think-router`](docs/think-router.md): Skill router. Use when you are unsure which thinking skill in this repository fits the current problem.
+- [`critical-thinking`](docs/critical-thinking.md): Thinking / argument evaluation. Use when you need to examine a view, claim, argument, decision, or phenomenon by checking reasons, evidence, assumptions, bias, and alternatives.
+- [`beautiful-question`](docs/beautiful-question.md): Thinking / problem solving. Use when a problem is vague, shallow, or stuck at the symptom level, and you need to find the real question before solving it.
+- [`first-principle`](docs/first-principle.md): Thinking / innovation. Use when you need to strip away inherited assumptions, find the system's base premise, and rebuild from first principles.
+- [`deepthink-5so`](docs/deepthink-5so.md): Thinking / consequence inference. Use when you need to repeatedly ask "so what?" to infer what a phenomenon may eventually lead to.
+- [`system-thinking`](docs/system-thinking.md): Thinking / systems analysis. Use when you need to map variables, causal chains, feedback loops, delays, and stakeholders in a complex system.
+
+### Coding Skills
+
+- [`coding-art`](docs/coding-art.md): Software engineering. Use when you are writing, reviewing, refactoring, designing, debugging, or optimizing code and want principled engineering judgment.
 
 ## Installation
 
@@ -70,10 +75,10 @@ scripts/install.sh --target codex --dry-run
 
 Default destinations:
 
-| Target | Directory |
-| --- | --- |
+| Target   | Directory          |
+| -------- | ------------------ |
 | `agents` | `~/.agents/skills` |
-| `codex` | `~/.codex/skills` |
+| `codex`  | `~/.codex/skills`  |
 | `claude` | `~/.claude/skills` |
 
 ## Usage
